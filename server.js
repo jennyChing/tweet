@@ -38,7 +38,7 @@ app.post('/showUserTweets', function(req, res) {
 						console.log(error);
 						res.render('index.jade', { message: 'This user has no tweets so far.'});
 					} else {
-						res.render('index.jade', { message: 'Tweets for' + userName + ": ", data: rows});
+						res.render('index.jade', { message: 'Tweets for' + userName, data: rows});
 					}
 				});
 			}
