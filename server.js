@@ -33,7 +33,7 @@ app.post('/showUserTweets', function(req, res) {
 				res.render('index.jade', { message: 'There seems to be an issue with the username that you entered'});
 			} else {
 				userId = rows[0].userId;
-				connection.query("SELECT * FROM tweetTable WHERE userId = ? ORDER BY likes DESC LIMIT 10", [userId], function(error, rows, fields) {
+				connection.query("SELECT *, likes + replies + shares as totalScore FROM tweetTable WHERE userId = ? ORDER BY totalScore DESC LIMIT 10", [userId], function(error, rows, fields) {
 					if(!!error || rows.length < 1) {
 						console.log(error);
 						res.render('index.jade', { message: 'This user has no tweets so far.'});

@@ -1,11 +1,26 @@
 html
  head
   title Technotip
-  body
-   form(method="POST", action='/showUserTweets')
-     p userName
-     input(type="text", name="userName")
-     input(type="Submit")
-    </form>
- h1=message
- p=data
+ body
+  h1=message
+  div
+   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+   block content
+   form(method="POST", action='showUserTweets')
+    input(type="text", name="userName")
+    input(type="submit", value="Search")
+   
+   table
+    thead
+     tr
+      td Tweet
+      td Likes
+      td Shares
+      td Replies
+    tbody
+     for tweet in data
+      tr
+        td= tweet.tweet_text
+        td= tweet.likes
+        td= tweet.replies
+        td= tweet.shares 
