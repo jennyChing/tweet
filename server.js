@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 var pool = mysql.createPool({
 	host: 'task1db.c0wykvs8ujyc.us-east-1.rds.amazonaws.com',
     user: 'jklife3',
-    password: 'J23226006',
+    password: // removed for security purpose
     database: 'tweet',
     port: '3306',
     debug: true
