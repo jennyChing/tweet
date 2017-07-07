@@ -5,11 +5,11 @@ html
 
  body
   
-  div.col-lg-6
+  div.col-lg-9
    h1=message
    block content
    form(method="POST", action='showUserTweets').form-group
-    div.input-group
+    div.input-group.col-lg-5
      input(type="text", name="userName").form-control
      input(type="submit", value="Search", class="btn btn-info")
   
@@ -17,17 +17,17 @@ html
     table.table
      thead.thead-inverse
       tr
+       td <strong> Post time </strong>
        td <strong> Tweet </strong>
        td <strong> Likes </strong>
        td <strong> Shares </strong>
-       td <strong> Replies </strong>
      tbody
       for tweet in data
        tr
-         td= tweet.tweet_text
-         td= tweet.likes
-         td= tweet.replies
-         td= tweet.shares 
+         td= tweet.created_at
+         td= tweet.text
+         td= tweet.favorite_count
+         td= tweet.retweet_count
   
   script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous")
   
