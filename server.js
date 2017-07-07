@@ -15,6 +15,18 @@ app.set('view engine', 'jade');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); 
 
+<<<<<<< HEAD
+=======
+var pool = mysql.createPool({
+	host: 'task1db.c0wykvs8ujyc.us-east-1.rds.amazonaws.com',
+    user: 'jklife3',
+    password: // removed for security purpose
+    database: 'tweet',
+    port: '3306',
+    debug: true
+});
+
+>>>>>>> 0c861f04fc34129710168893e6eb358b25aaa31d
 app.get('/', function(req, res) {
 	res.render('index.jade', { title: 'index' , message: 'Input the username'});
 	// res.json({ message: 'Welcome to tweet!'});
