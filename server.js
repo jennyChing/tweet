@@ -2,10 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var twit = require('twitter'),
 	client = new twit({
-		consumer_key:'lQCnX0y6UlDruC38ShhJhbfU5',
-		consumer_secret:'5Rs2dY8fz1RTPNOnxxWbMFAq7bh0TZyG2qrGLF6pHuit091vT4',
-		access_token_key:'2354050566-b021r62sNCJBgHCRiX7Co8cAZHmlgeO5BvOuSgs',
-		access_token_secret:'4xfA8BrAzEhRLZn6Uw9r0s0Kqu2FAeQ7194yNjvFNbiXz'
+		consumer_key:'consumer_key',
+		consumer_secret:'consumer_secret',
+		access_token_key:'access_token_key',
+		access_token_secret:'access_token_secret'
 	});
 
 var app = express();
